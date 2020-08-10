@@ -38,6 +38,8 @@ enum custom_keycodes {
 #define KC_X5 BL_STEP
 #define KC_X6 MT(MOD_LALT, KC_SPC)
 #define KC_X7 MT(MOD_RALT, KC_BSPC)
+#define KC_XLC MT(MOD_LSFT, KC_SPC)
+#define KC_XRC MT(MOD_RSFT, KC_BSPC)
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -50,14 +52,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ├────────┼────────┼────────┼────────┼────────┼────────┤        ├────────┼────────┼────────┼────────┼────────┼────────┤
  * |  LSFT  |   Z    |   X    |   C    |   V    |   B    |        |   N    |   M    |  COMM  |  DOT   |  SLSH  |   X4   |
  * ├────────┼────────┼────────┼────────┼────────┼────────┤        ├────────┼────────┼────────┼────────┼────────┼────────┤
- * |  SPC   |  LCTL  |   X3   |  LGUI  |   X6   |  NUM   |        |  SYM   |   X7   |  EQL   |  BSLS  |   UP   |  BSPC  |
+ * |  XLC   |  LCTL  |   X3   |  LGUI  |   X6   |  NUM   |        |  SYM   |   X7   |  EQL   |  BSLS  |   UP   |  XRC  |
  * └────────┴────────┴────────┴────────┴────────┴────────┘        └────────┴────────┴────────┴────────┴────────┴────────┘
  */
   [_QWERTY] = LAYOUT_ortho_4x12_short(
     X0  , Q   , W , E   , R , T ,      Y , U , I   , O   , P   , MINS,
     TAB , A   , S , D   , F , G ,      H , J , K   , L   , SCLN, QUOT,
     LSFT, Z   , X , C   , V , B ,      N , M , COMM, DOT , SLSH, X4  ,
-    SPC , LCTL, X3, LGUI, X6,NUM,     SYM, X7, EQL , BSLS, UP  , BSPC
+    XLC , LCTL, X3, LGUI, X6,NUM,     SYM, X7, EQL , BSLS, UP  , XRC
 ),
 
 /*  COLEMAK
@@ -68,14 +70,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ├────────┼────────┼────────┼────────┼────────┼────────┤        ├────────┼────────┼────────┼────────┼────────┼────────┤
  * |  LSFT  |   Z    |   X    |   C    |   V    |   B    |        |   K    |   M    |  COMM  |  DOT   |  SLSH  |   X4   |
  * ├────────┼────────┼────────┼────────┼────────┼────────┤        ├────────┼────────┼────────┼────────┼────────┼────────┤
- * |  SPC   |  LCTL  |   X3   |  LGUI  |   X6   |  NUM   |        |  SYM   |   X7   |  EQL   |  BSLS  |   UP   |  BSPC  |
+ * |  XLC   |  LCTL  |   X3   |  LGUI  |   X6   |  NUM   |        |  SYM   |   X7   |  EQL   |  BSLS  |   UP   |  XRC  |
  * └────────┴────────┴────────┴────────┴────────┴────────┘        └────────┴────────┴────────┴────────┴────────┴────────┘
  */
     [_COLEMAK] = LAYOUT_ortho_4x12_short(
         X0    ,   Q    ,   W    ,   F    ,   P    ,   G  ,            J    ,   L    ,   U    ,   Y    ,  SCLN  ,  MINS  ,
         TAB   ,   A    ,   R    ,   S    ,   T    ,   D  ,            H    ,   N    ,   E    ,   I    ,   O    ,  QUOT  ,
         LSFT  ,   Z    ,   X    ,   C    ,   V    ,   B  ,            K    ,   M    ,  COMM  ,  DOT   ,  SLSH  ,   X4   ,
-        SPC   ,  LCTL  ,   X3   ,  LGUI  ,   X6   ,  NUM ,           SYM   ,   X7   ,  EQL   ,  BSLS  ,   UP   ,  BSPC
+        XLC   ,  LCTL  ,   X3   ,  LGUI  ,   X6   ,  NUM ,           SYM   ,   X7   ,  EQL   ,  BSLS  ,   UP   ,  XRC
     ),
 
 /*  WORKMAN
@@ -86,14 +88,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ├────────┼────────┼────────┼────────┼────────┼────────┤        ├────────┼────────┼────────┼────────┼────────┼────────┤
  * |  LSFT  |   Z    |   X    |   M    |   C    |   V    |        |   K    |   L    |  COMM  |  DOT   |  SLSH  |   X4   |
  * ├────────┼────────┼────────┼────────┼────────┼────────┤        ├────────┼────────┼────────┼────────┼────────┼────────┤
- * |  SPC   |  LCTL  |   X3   |  LGUI  |   X6   |  NUM   |        |  SYM   |   X7   |  EQL   |  BSLS  |   UP   |  BSPC  |
+ * |  XLC   |  LCTL  |   X3   |  LGUI  |   X6   |  NUM   |        |  SYM   |   X7   |  EQL   |  BSLS  |   UP   |  XRC  |
  * └────────┴────────┴────────┴────────┴────────┴────────┘        └────────┴────────┴────────┴────────┴────────┴────────┘
  */
     [_WORKMAN] = LAYOUT_ortho_4x12_short(
         X0    ,   Q    ,   D    ,   R    ,   W    ,   B    ,          J    ,   F    ,   U    ,   P    ,  SCLN  ,  MINS  ,
         TAB   ,   A    ,   S    ,   H    ,   T    ,   G    ,          Y    ,   N    ,   E    ,   O    ,   I    ,  QUOT  ,
         LSFT  ,   Z    ,   X    ,   M    ,   C    ,   V    ,          K    ,   L    ,  COMM  ,  DOT   ,  SLSH  ,   X4   ,
-        SPC   ,  LCTL  ,   X3   ,  LGUI  ,   X6   ,  NUM   ,         SYM   ,   X7   ,  EQL   ,  BSLS  ,   UP   ,  BSPC
+        XLC   ,  LCTL  ,   X3   ,  LGUI  ,   X6   ,  NUM   ,         SYM   ,   X7   ,  EQL   ,  BSLS  ,   UP   ,  XRC
     ),
 
 /*  LOWER (Zahlen) [HOLDNUM]
