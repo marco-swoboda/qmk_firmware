@@ -1,3 +1,4 @@
-SRC += marco-swoboda.c
+SRC += marco-swoboda.c \
+		process_records.c
 
 
