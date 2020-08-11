@@ -1,4 +1,3 @@
-#include QMK_KEYBOARD_H
 #include "marco-swoboda.h"
 
 
@@ -44,34 +43,21 @@ extern keymap_config_t keymap_config;
 #define UC_CLUE UC(0x203D)
 
 
-/*
-#define _QWERTY 0
-#define _WORKMAN 1
-#define _WORKMAN_P 2
-#define _LEFT_LEFT 3
-#define _LEFT_RIGHT 4
-#define _RIGHT_LEFT 5
-#define _RIGHT_RIGHT 6
-#define _DBL_INNER 10
-#define _DBL_OUTER 11
-#define _DBL_LEFT 12
-#define _DBL_RIGHT 13
-
-#define _LOWER _LEFT_RIGHT
-#define _RAISE _RIGHT_LEFT
-#define _ADJUST _DBL_INNER
-*/
-
 enum custom_keycodes {
-  QWERTY = SAFE_RANGE,
-  WORKMAN,
-  WORKMAN_P,
-  LOWER,
-  RAISE,
-  ADJUST,
+    QWERTY = SAFE_RANGE,
+    WORKMAN,
+    WORKMAN_P,
+    LOWER,
+    RAISE,
+    ADJUST,
+    KEYMAP_SAFE_RANGE
 };
 
-#define PLACEHOLDER_SAFE_RANGE SAFE_RANGE
+#if defined(KEYMAP_SAFE_RANGE)
+#    define PLACEHOLDER_SAFE_RANGE KEYMAP_SAFE_RANGE
+#else
+#    define PLACEHOLDER_SAFE_RANGE SAFE_RANGE
+#endif
 
 enum userspace_custom_keycodes {
     KC_QWERTY = PLACEHOLDER_SAFE_RANGE, // Sets default layer to QWERTY
