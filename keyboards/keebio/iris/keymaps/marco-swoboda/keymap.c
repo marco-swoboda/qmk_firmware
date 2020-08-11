@@ -23,7 +23,7 @@
      LALT_T(KC_TAB), K11, K12, K13,      K14,     K15,                           K16,     K17,     K18,     K19,     K1A,     KC_BSLS, \
      KC_TAB,         K21, K22, K23,      K24,     K25,                           K26,     K27,     K28,     K29,     K2A,     RALT_T(KC_QUOT), \
      OS_LSFT, CTL_T(K31), K32, K33,      K34,     K35,     OS_LALT,    OS_RGUI,  K36,     K37,     K38,     K39, RCTL_T(K3A), OS_RSFT, \
-                             KC_GRV, KC_SPC,  LT(_LOWER,KC_BSPC),         LT(_RAISE,KC_DEL),  KC_ENT,  RAISE                           \
+                             KC_GRV, SP_LWER,     BK_LWER,                   DL_RAIS,  ET_RAIS,  RAISE                           \
   )
 #define LAYOUT_iris_base_wrapper(...)       LAYOUT_iris_base(__VA_ARGS__)
 
@@ -82,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      BL_STEP, _______, _______, _______, KC_DOWN, KC_LCBR, KC_LPRN,          KC_RPRN, KC_RCBR, KC_P1,   KC_P2,   KC_P3,   KC_MINS, KC_END,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    _______, _______, KC_DEL,                    KC_DEL,  _______, KC_P0
+                                    _______, _______, _______,                    _______, _______, KC_P0
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 

@@ -10,21 +10,20 @@
 #endif
 
 enum userspace_custom_keycodes {
-    QWERTY = PLACEHOLDER_SAFE_RANGE, // Sets default layer to QWERTY
-    KC_QWERTY,
-    KC_WORKMAN,                     // Sets default layer to WORKMAN
-    KC_WORKMAN_P,                   // Sets default layer to WORKMAN_P
-    // VRSN,  // Prints QMK Firmware and board info
-    // KC_MAKE,                        // Run keyboard's customized make command
-    // KC_RGB_T,                       // Toggles RGB Layer Indication mode
-    // RGB_IDL,                        // RGB Idling animations
-    // KC_CCCV,                        // Hold to copy, tap to paste
-    // KC_NUKE,                        // NUCLEAR LAUNCH DETECTED!!!
-    // UC_FLIP,                        // (ಠ痊ಠ)┻━┻
-    // UC_TABL,                        // ┬─┬ノ( º _ ºノ)
-    // UC_SHRG,                        // ¯\_(ツ)_/¯
-    // UC_DISA,                        // ಠ_ಠ
-    NEW_SAFE_RANGE                  // use "NEWPLACEHOLDER for keymap specific codes
+    KC_QWERTY = PLACEHOLDER_SAFE_RANGE, // Sets default layer to QWERTY
+    KC_WORKMAN,                         // Sets default layer to WORKMAN
+    KC_WORKMAN_P,                       // Sets default layer to WORKMAN_P
+    VRSN,                               // Prints QMK Firmware and board info
+    // KC_MAKE,                         // Run keyboard's customized make command
+    // KC_RGB_T,                        // Toggles RGB Layer Indication mode
+    // RGB_IDL,                         // RGB Idling animations
+    // KC_CCCV,                         // Hold to copy, tap to paste
+    // KC_NUKE,                         // NUCLEAR LAUNCH DETECTED!!!
+    // UC_FLIP,                         // (ಠ痊ಠ)┻━┻
+    // UC_TABL,                         // ┬─┬ノ( º _ ºノ)
+    // UC_SHRG,                         // ¯\_(ツ)_/¯
+    // UC_DISA,                         // ಠ_ಠ
+    NEW_SAFE_RANGE                      // use "NEWPLACEHOLDER for keymap specific codes
 };
 
 
@@ -76,4 +75,3 @@ enum userspace_custom_keycodes {
 #define RAISE   MO(_RAISE)
 #define ADJUST  MO(_ADJUST)
 
-#define KC_RSENT MT(MOD_LSFT, KC_ENT)
