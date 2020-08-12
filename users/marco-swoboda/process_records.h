@@ -26,7 +26,6 @@ enum userspace_custom_keycodes {
     NEW_SAFE_RANGE                      // use "NEWPLACEHOLDER for keymap specific codes
 };
 
-
 #define KC_LOWER   MO(_LOWER)
 #define KC_RAISE   MO(_RAISE)
 #define KC_ADJUST  MO(_ADJUST)
@@ -38,10 +37,14 @@ enum userspace_custom_keycodes {
 #define KC_RESET RESET
 #define KC_RST   KC_RESET
 
-#define BK_LWER LT(_LOWER, KC_BSPC)
-#define SP_LWER LT(_LOWER, KC_SPC)
-#define DL_RAIS LT(_RAISE, KC_DEL)
-#define ET_RAIS LT(_RAISE, KC_ENTER)
+// Mod Tap Definitions
+// -------------------
+                                      //  Tap     Hold
+                                      //  ------------------
+#define BK_LWER LT(_LOWER, KC_BSPC)   //  BSPC    LOWER
+#define SP_LWER LT(_LOWER, KC_SPC)    //  SPACE   LOWER
+#define DL_RAIS LT(_RAISE, KC_DEL)    //  DEL     RAISE
+#define ET_RAIS LT(_RAISE, KC_ENTER)  //  ENTER   RAISE
 
 /* OSM keycodes, to keep things clean and easy to change */
 #define KC_MLSF OSM(MOD_LSFT)

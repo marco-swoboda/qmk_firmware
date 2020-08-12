@@ -1,7 +1,7 @@
 #include "marco-swoboda.h"
 
 /*
- * The `LAYOUT_iris_base` macro is a template to allow the use of identical
+ * The `LAYOUT_levinson_base` macro is a template to allow the use of identical
  * modifiers for the default layouts (eg QWERTY, Colemak, Dvorak, etc), so
  * that there is no need to set them up for each layout, and modify all of
  * them if I want to change them.  This helps to keep consistency and ease
@@ -18,10 +18,10 @@
     K21, K22, K23, K24, K25, K26, K27, K28, K29, K2A  \
   ) \
   LAYOUT_wrapper( \
-    KC_ESC,         K01,        K02,     K03,     K04,     K05,           K06,      K07,     K08,     K09,     K0A,     KC_MINS,         \
-    LALT_T(KC_TAB), K11,        K12,     K13,     K14,     K15,           K16,      K17,     K18,     K19,     K1A,     KC_BSLS,         \
-    KC_TAB,         CTL_T(K21), K22,     K23,     K24,     K25,           K26,      K27,     K28,     K29,     K2A,     RALT_T(KC_QUOT), \
-    OS_LSFT,        OS_RCTL,    KC_GRV,  OS_LGUI, SP_LWER, BK_LWER,       DL_RAIS,  ET_RAIS, OS_RGUI, OS_RALT, OS_RCTL, OS_RSFT          \
+    KC_ESC,         K01,        K02,     K03,     K04,     K05,           K06,      K07,     K08,     K09,     K0A,     KC_MINS, \
+    LALT_T(KC_TAB), K11,        K12,     K13,     K14,     K15,           K16,      K17,     K18,     K19,     K1A,     KC_BSLS, \
+    KC_TAB,         K21,        K22,     K23,     K24,     K25,           K26,      K27,     K28,     K29,     K2A,     KC_QUOT, \
+    OS_LSFT,        OS_RCTL,    KC_GRV,  OS_LGUI, SP_LWER, BK_LWER,       DL_RAIS,  ET_RAIS, OS_RGUI, OS_RALT, OS_RCTL, OS_RSFT  \
   )
 
 #define LAYOUT_levinson_base_wrapper(...)       LAYOUT_levinson_base(__VA_ARGS__)
@@ -45,14 +45,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,     KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PGUP,
      RESET,   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_PGDN,
      KC_DEL,  _______, KC_LEFT, KC_RGHT, KC_UP,   KC_LBRC,     KC_RBRC, KC_P4,   KC_P5,   KC_P6,   KC_PLUS, KC_HOME,
-     BL_STEP, _______, _______, _______, KC_DOWN, KC_LCBR,     KC_RCBR, KC_P1,   KC_P2,   KC_P3,   KC_MINS, KC_END
+     BL_STEP, _______, _______, _______, _______, _______,     _______, _______, KC_P2,   KC_P3,   KC_MINS, KC_END
   ),
 
   [_RAISE] = LAYOUT_wrapper(
      KC_F12,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,        KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
      RGB_TOG, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,      KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, _______,
      RGB_MOD, KC_MPRV, KC_MNXT, KC_VOLU, KC_PGUP, KC_UNDS,      KC_EQL,  KC_HOME, RGB_HUI, RGB_SAI, RGB_VAI, _______,
-     KC_MUTE, KC_MSTP, KC_MPLY, KC_VOLD, KC_PGDN, KC_MINS,      KC_PLUS, KC_END,  RGB_HUD, RGB_SAD, RGB_VAD, _______
+     KC_MUTE, KC_MSTP, KC_MPLY, KC_VOLD, _______, _______,      _______, _______, RGB_HUD, RGB_SAD, RGB_VAD, _______
   ),
 
   [_ADJUST] = LAYOUT_wrapper(
