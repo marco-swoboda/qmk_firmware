@@ -1,4 +1,10 @@
+COMBO_ENABLE = yes
+
+
 SRC += marco-swoboda.c \
 		process_records.c
 
-COMBO_ENABLE = yes
+
+ifdef COMBO_ENABLE
+    SRC += combos.c
+endif
