@@ -1,5 +1,5 @@
-COMBO_ENABLE = no
-
+COMBO_ENABLE = yes
+TAP_DANCE_ENABLE = yes
 
 SRC += marco-swoboda.c \
 		process_records.c
@@ -13,3 +13,7 @@ ifdef ENCODER_ENABLE
 endif
 
 SRC += callbacks.c
+
+ifdef TAP_DANCE_ENABLE
+	SRC += tap_dance.c
+endif

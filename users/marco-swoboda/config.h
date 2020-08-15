@@ -7,3 +7,5 @@
 #define COMBO_COUNT 3
 #define COMBO_TERM 150
 #endif
+
+#define TAPPING_TERM 175

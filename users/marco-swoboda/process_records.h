@@ -1,6 +1,6 @@
 #pragma once
 #include "marco-swoboda.h"
-
+#include "tap_dance.h"
 
 
 #if defined(KEYMAP_SAFE_RANGE)
@@ -45,6 +45,16 @@ enum userspace_custom_keycodes {
 #define SP_LWER LT(_LOWER, KC_SPC)    //  SPACE   LOWER
 #define DL_RAIS LT(_RAISE, KC_DEL)    //  DEL     RAISE
 #define ET_RAIS LT(_RAISE, KC_ENTER)  //  ENTER   RAISE
+
+
+// Tap Dance Definitions                  Single   | Single Hold |  Double     | Double Hold
+#define KC_PARENS TD(TD_CLOSE_LPRN)   //  LPRN     | ----------- |  RPRN       | -------------
+
+#ifdef TAP_DANCE_ENABLE
+#define KC_X_CTL  TD(TD_X_CTL)        //  x        | LCTRL       |  ESC        | xx
+#else
+#define KC_X_CTL KC_X
+#endif
 
 /* OSM keycodes, to keep things clean and easy to change */
 #define KC_MLSF OSM(MOD_LSFT)
