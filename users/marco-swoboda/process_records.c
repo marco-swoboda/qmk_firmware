@@ -30,19 +30,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-__attribute__((weak)) layer_state_t layer_state_set_keymap(layer_state_t state) { return state; }
 
-// on layer change, no matter where the change was initiated
-// Then runs keymap's layer change check
-layer_state_t layer_state_set_user(layer_state_t state) {
-#ifdef CONSOLE_ENABLE
-    uprintf("layer_state_set_user: LAYER: %u\n", state);
-#endif
-    state = update_tri_layer_state(state, _RAISE, _LOWER, _ADJUST);
-#ifdef CONSOLE_ENABLE
-    uprintf("next state: LAYER: %u\n", state);
-#endif
-    return layer_state_set_keymap(state);
-}
 
 

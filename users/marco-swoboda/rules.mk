@@ -1,4 +1,4 @@
-COMBO_ENABLE = yes
+COMBO_ENABLE = no
 
 
 SRC += marco-swoboda.c \
@@ -11,3 +11,5 @@ endif
 ifdef ENCODER_ENABLE
 	SRC += encoder.c
 endif
+
+SRC += callbacks.c
