@@ -59,27 +59,27 @@ static tap xtap_state = {
     .state = 0
 };
 
-void x_finished(qk_tap_dance_state_t *state, void *user_data) {
+void h_finished(qk_tap_dance_state_t *state, void *user_data) {
     xtap_state.state = cur_dance(state);
     switch (xtap_state.state) {
-        case SINGLE_TAP: register_code(KC_X); break;
+        case SINGLE_TAP: register_code(KC_H); break;
         case SINGLE_HOLD: register_code(KC_LCTRL); break;
         case DOUBLE_TAP: register_code(KC_ESC); break;
         case DOUBLE_HOLD: register_code(KC_LALT); break;
         // Last case is for fast typing. Assuming your key is `f`:
         // For example, when typing the word `buffer`, and you want to make sure that you send `ff` and not `Esc`.
         // In order to type `ff` when typing fast, the next character will have to be hit within the `TAPPING_TERM`, which by default is 200ms.
-        case DOUBLE_SINGLE_TAP: tap_code(KC_X); register_code(KC_X);
+        case DOUBLE_SINGLE_TAP: tap_code(KC_H); register_code(KC_H);
     }
 }
 
-void x_reset(qk_tap_dance_state_t *state, void *user_data) {
+void h_reset(qk_tap_dance_state_t *state, void *user_data) {
     switch (xtap_state.state) {
-        case SINGLE_TAP: unregister_code(KC_X); break;
+        case SINGLE_TAP: unregister_code(KC_H); break;
         case SINGLE_HOLD: unregister_code(KC_LCTRL); break;
         case DOUBLE_TAP: unregister_code(KC_ESC); break;
         case DOUBLE_HOLD: unregister_code(KC_LALT);
-        case DOUBLE_SINGLE_TAP: unregister_code(KC_X);
+        case DOUBLE_SINGLE_TAP: unregister_code(KC_H);
     }
     xtap_state.state = 0;
 }
@@ -88,6 +88,6 @@ void x_reset(qk_tap_dance_state_t *state, void *user_data) {
 qk_tap_dance_action_t tap_dance_actions[] = {
     // Tap once for (, twice for )
     [TD_CLOSE_LPRN] = ACTION_TAP_DANCE_DOUBLE(KC_LPRN, KC_RPRN),
-    // 1=x, 1h=CTRL, 2t=ESC, 2h=LALT
-    [TD_X_CTL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, x_finished, x_reset)
+    // 1=h, 1h=CTRL, 2t=ESC, 2h=LALT
+    [TD_H_CTL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, h_finished, h_reset)
 };

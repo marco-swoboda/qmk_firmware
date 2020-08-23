@@ -51,9 +51,9 @@ enum userspace_custom_keycodes {
 #define KC_PARENS TD(TD_CLOSE_LPRN)   //  LPRN     | ----------- |  RPRN       | -------------
 
 #ifdef TAP_DANCE_ENABLE
-#define KC_X_CTL  TD(TD_X_CTL)        //  x        | LCTRL       |  ESC        | xx
+#define KC_H_CTL  TD(TD_H_CTL)        //  h        | LCTRL       |  ESC        | hh
 #else
-#define KC_X_CTL KC_X
+#define KC_H_CTL KC_H
 #endif
 
 /* OSM keycodes, to keep things clean and easy to change */

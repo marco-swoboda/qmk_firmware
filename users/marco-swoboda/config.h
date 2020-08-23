@@ -9,3 +9,5 @@
 #endif
 
 #define TAPPING_TERM 175
+
+#define TAP_CODE_DELAY 5

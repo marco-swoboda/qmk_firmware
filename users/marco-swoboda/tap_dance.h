@@ -18,11 +18,11 @@ enum {
 // tap dance declarations
 enum {
     TD_CLOSE_LPRN,
-    TD_X_CTL,
+    TD_H_CTL,
 };
 
 uint8_t cur_dance(qk_tap_dance_state_t *state);
 
 // For the x tap dance. Put it here so it can be used in any keymap
-void x_finished(qk_tap_dance_state_t *state, void *user_data);
-void x_reset(qk_tap_dance_state_t *state, void *user_data);
+void h_finished(qk_tap_dance_state_t *state, void *user_data);
+void h_reset(qk_tap_dance_state_t *state, void *user_data);
