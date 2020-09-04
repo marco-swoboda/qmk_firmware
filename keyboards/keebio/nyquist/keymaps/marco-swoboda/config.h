@@ -49,3 +49,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifdef LOCKING_RESYNC_ENABLE
 #    undef LOCKING_RESYNC_ENABLE
 #endif
+
+#define RGBLIGHT_LAYERS

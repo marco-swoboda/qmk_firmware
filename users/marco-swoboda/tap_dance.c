@@ -53,15 +53,15 @@ uint8_t cur_dance(qk_tap_dance_state_t *state) {
     } else return 8; // Magic number. At some point this method will expand to work for more presses
 }
 
-// Create an instance of 'tap' for the 'x' tap dance.
-static tap xtap_state = {
+// Create an instance of 'tap' for the 'h' tap dance.
+static tap htap_state = {
     .is_press_action = true,
     .state = 0
 };
 
 void h_finished(qk_tap_dance_state_t *state, void *user_data) {
-    xtap_state.state = cur_dance(state);
-    switch (xtap_state.state) {
+    htap_state.state = cur_dance(state);
+    switch (htap_state.state) {
         case SINGLE_TAP: register_code(KC_H); break;
         case SINGLE_HOLD: register_code(KC_LCTRL); break;
         case DOUBLE_TAP: register_code(KC_ESC); break;
@@ -74,20 +74,64 @@ void h_finished(qk_tap_dance_state_t *state, void *user_data) {
 }
 
 void h_reset(qk_tap_dance_state_t *state, void *user_data) {
-    switch (xtap_state.state) {
+    switch (htap_state.state) {
         case SINGLE_TAP: unregister_code(KC_H); break;
         case SINGLE_HOLD: unregister_code(KC_LCTRL); break;
         case DOUBLE_TAP: unregister_code(KC_ESC); break;
-        case DOUBLE_HOLD: unregister_code(KC_LALT);
-        case DOUBLE_SINGLE_TAP: unregister_code(KC_H);
+        case DOUBLE_HOLD: unregister_code(KC_LALT); break;
+        case DOUBLE_SINGLE_TAP: unregister_code(KC_H); break;
     }
-    xtap_state.state = 0;
+    htap_state.state = 0;
+}
+
+
+// Initialize tap structure associated with example tap dance key
+static tap ql_tap_state = {
+    .is_press_action = true,
+    .state = 0
+};
+
+// Functions that control what our tap dance key does
+void ql_finished(qk_tap_dance_state_t *state, void *user_data) {
+    ql_tap_state.state = cur_dance(state);
+    switch (ql_tap_state.state) {
+        case SINGLE_TAP:
+            tap_code(KC_QUOT);
+            break;
+        case SINGLE_HOLD:
+            layer_on(_LOWER);
+            break;
+        case DOUBLE_TAP:
+            // Check to see if the layer is already set
+            if (layer_state_is(_LOWER)) {
+                // If already set, then switch it off
+                layer_off(_LOWER);
+            } else {
+                // If not already set, then switch the layer on
+                layer_on(_LOWER);
+            }
+            break;
+    }
+}
+
+void ql_reset(qk_tap_dance_state_t *state, void *user_data) {
+    // If the key was held down and now is released then switch off the layer
+    if (ql_tap_state.state == SINGLE_HOLD) {
+        layer_off(_LOWER);
+    }
+    ql_tap_state.state = 0;
 }
 
 // tap dance definitions
 qk_tap_dance_action_t tap_dance_actions[] = {
     // Tap once for (, twice for )
     [TD_CLOSE_LPRN] = ACTION_TAP_DANCE_DOUBLE(KC_LPRN, KC_RPRN),
+    // Tap once for [, twice for {
+    [TD_LBRC] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_LCBR),
+    // Tap once for ], twice for }
+    [TD_RBRC] = ACTION_TAP_DANCE_DOUBLE(KC_RBRC, KC_RCBR),
     // 1=h, 1h=CTRL, 2t=ESC, 2h=LALT
-    [TD_H_CTL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, h_finished, h_reset)
+    [TD_H_CTL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, h_finished, h_reset),
+
+    [TD_QUOT_LAYR] = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, ql_finished, ql_reset, 275)
 };

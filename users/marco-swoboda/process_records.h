@@ -32,10 +32,10 @@ enum userspace_custom_keycodes {
 #define OS_LWR  OSL(_LOWER)
 #define OS_RSE  OSL(_RAISE)
 
-
-
+#define KC_LAYR KC_TRNS
 #define KC_RESET RESET
 #define KC_RST   KC_RESET
+
 
 // Mod Tap Definitions
 // -------------------
@@ -45,15 +45,19 @@ enum userspace_custom_keycodes {
 #define SP_LWER LT(_LOWER, KC_SPC)    //  SPACE   LOWER
 #define DL_RAIS LT(_RAISE, KC_DEL)    //  DEL     RAISE
 #define ET_RAIS LT(_RAISE, KC_ENTER)  //  ENTER   RAISE
-
+#define ALT_GRV LALT_T(KC_GRV)        //  `       LALT
 
 // Tap Dance Definitions                  Single   | Single Hold |  Double     | Double Hold
 #define KC_PARENS TD(TD_CLOSE_LPRN)   //  LPRN     | ----------- |  RPRN       | -------------
 
 #ifdef TAP_DANCE_ENABLE
 #define KC_H_CTL  TD(TD_H_CTL)        //  h        | LCTRL       |  ESC        | hh
+#define KC_BRCL   TD(TD_LBRC)         //  [        |             |  {
+#define KC_BRCR   TD(TD_RBRC)         //  ]        |             |  }
 #else
-#define KC_H_CTL KC_H
+#define KC_H_CTL  KC_H
+#define KC_BRCL   KC_LBRC
+#define KC_BRCR   KC_RBRC
 #endif
 
 /* OSM keycodes, to keep things clean and easy to change */
@@ -71,7 +75,8 @@ enum userspace_custom_keycodes {
 #define OS_MEH  OSM(MOD_MEH)
 #define OS_HYPR OSM(MOD_HYPR)
 
-#define ALT_APP ALT_T(KC_APP)
+#define ALT_APP LALT_T(KC_APP)
+#define ALT_TAB LALT_T(KC_TAB)
 
 #define MG_NKRO MAGIC_TOGGLE_NKRO
 

@@ -19,10 +19,8 @@ enum {
 enum {
     TD_CLOSE_LPRN,
     TD_H_CTL,
+    TD_LBRC, // [, {
+    TD_RBRC, // ], }
+    TD_QUOT_LAYR, // layer switch/toggle
 };
 
-uint8_t cur_dance(qk_tap_dance_state_t *state);
-
-// For the x tap dance. Put it here so it can be used in any keymap
-void h_finished(qk_tap_dance_state_t *state, void *user_data);
-void h_reset(qk_tap_dance_state_t *state, void *user_data);
