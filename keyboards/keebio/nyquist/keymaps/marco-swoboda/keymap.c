@@ -46,9 +46,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT_wrapper(
      KC_TILD, _________________LOWER_L1__________________,     _________________LOWER_R1__________________, KC_PGUP,
-     RESET,   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_PGDN,
-     KC_DEL,  BL_STEP, KC_LEFT, KC_RGHT, KC_UP,   KC_BRCL,     KC_BRCR, KC_P4,   KC_P5,   KC_P6,   KC_PLUS, KC_HOME,
-     _______, _______, _______, _______, KC_DOWN, KC_LAYR,     KC_LAYR, _______, KC_P2,   KC_P3,   KC_MINS, KC_END
+     RESET,   KC_1,    KC_2,    KC_3,   KC_4,      KC_5,        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_PGDN,
+     KC_DEL,  BL_STEP, KC_LEFT, KC_UP,  KC_RGHT,   KC_BRCL,     KC_BRCR, KC_P4,   KC_P5,   KC_P6,   KC_PLUS, KC_HOME,
+     _______, _______, _______, KC_DOWN,KC_PARENS, KC_LAYR,     KC_LAYR, _______, KC_P2,   KC_P3,   KC_MINS, KC_END
   ),
 
   [_RAISE] = LAYOUT_wrapper(
