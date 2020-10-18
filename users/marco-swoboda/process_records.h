@@ -9,6 +9,7 @@
 #    define PLACEHOLDER_SAFE_RANGE SAFE_RANGE
 #endif
 
+
 enum userspace_custom_keycodes {
     KC_QWERTY = PLACEHOLDER_SAFE_RANGE, // Sets default layer to QWERTY
     KC_WORKMAN,                         // Sets default layer to WORKMAN
@@ -92,4 +93,5 @@ enum userspace_custom_keycodes {
 #define LOWER   MO(_LOWER)
 #define RAISE   MO(_RAISE)
 #define ADJUST  MO(_ADJUST)
+#define PROGR   MO(_PROGRAMMER)
 
