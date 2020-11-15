@@ -6,7 +6,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   uprintf("process_record_user: kc: %u, col: %u, row: %u, pressed: %u\n", keycode, record->event.key.col, record->event.key.row, record->event.pressed);
 #endif
   switch (keycode) {
-    case KC_QWERTY ... KC_WORKMAN_P:
+    case KC_QWERTY ... KC_DVORAK_AU:
         if (record->event.pressed) {
             uint8_t mods = mod_config(get_mods() | get_oneshot_mods());
             if (!mods) {
@@ -24,6 +24,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   print("WORKMAN");
 #endif
                 set_single_persistent_default_layer(keycode - KC_QWERTY + 8);
+            } else if (mods & MOD_MASK_CTRL) {
+#ifdef CONSOLE_ENABLE
+  print("DVORAK");
+#endif
+                set_single_persistent_default_layer(keycode - KC_QWERTY + 12);
+            } else if (mods & MOD_MASK_CTRL) {
+#ifdef CONSOLE_ENABLE
+  print("DVORAK_AU");
+#endif
+                set_single_persistent_default_layer(keycode - KC_QWERTY + 16);
             }
         }
         break;

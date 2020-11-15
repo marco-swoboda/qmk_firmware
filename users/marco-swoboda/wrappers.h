@@ -38,7 +38,8 @@ NOTE: These are all the same length.  If you do a search/replace
 #define ______________COLEMAK_MOD_DH_R3____________       KC_K,    KC_H_CTL,KC_COMM, KC_DOT,  KC_SLASH
 
 
-#define _________________DVORAK_L1_________________        KC_QUOT, KC_COMM, KC_DOT, KC_P,     KC_Y
+//#define _________________DVORAK_L1_________________        KC_QUOT, KC_COMM, KC_DOT, KC_P,     KC_Y
+#define _________________DVORAK_L1_________________        KC_SLASH, KC_COMM, KC_DOT, KC_P,     KC_Y
 #define _________________DVORAK_L2_________________        KC_A,    KC_O,    KC_E,   KC_U,     KC_I
 #define _________________DVORAK_L3_________________        KC_SCLN, KC_Q,    KC_J,   KC_K,     KC_X
 
@@ -47,9 +48,10 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _________________DVORAK_R3_________________        KC_B,    KC_M,    KC_W,    KC_V,    KC_Z
 
 
-#define ________________DVORAK_AU_L1_______________        KC_QUOT, KC_COMM, KC_DOT, KC_P,     KC_Y
-#define ________________DVORAK_AU_L2_______________        KC_O,    KC_A,    KC_E,   KC_I,     KC_U
-#define ________________DVORAK_AU_L3_______________        KC_SCLN, KC_Q,    KC_J,   KC_K,     KC_X
+//#define ________________DVORAK_AU_L1_______________        KC_QUOT, KC_COMM, KC_DOT, KC_P,     KC_Y
+#define ________________DVORAK_AU_L1_______________        KC_SLASH, KC_COMM, KC_DOT, KC_P,     KC_Y
+#define ________________DVORAK_AU_L2_______________        KC_O,     KC_A,    KC_E,   KC_I,     KC_U
+#define ________________DVORAK_AU_L3_______________        KC_SCLN,  KC_Q,    KC_J,   KC_K,     KC_X
 
 #define ________________DVORAK_AU_R1_______________        KC_F,    KC_G,    KC_C,    KC_R,    KC_L
 #define ________________DVORAK_AU_R2_______________        KC_D,    KC_H_CTL,KC_T,    KC_N,    KC_S

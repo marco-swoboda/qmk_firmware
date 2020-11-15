@@ -12,6 +12,8 @@ enum userspace_layers {
     _QWERTY  = 0,
     _WORKMAN,
     _WORKMAN_P,
+    _DVORAK,
+    _DVORAK_AU,
     _LOWER,
     _RAISE,
     _ADJUST,

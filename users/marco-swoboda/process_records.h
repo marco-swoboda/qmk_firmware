@@ -14,6 +14,8 @@ enum userspace_custom_keycodes {
     KC_QWERTY = PLACEHOLDER_SAFE_RANGE, // Sets default layer to QWERTY
     KC_WORKMAN,                         // Sets default layer to WORKMAN
     KC_WORKMAN_P,                       // Sets default layer to WORKMAN_P
+    KC_DVORAK,                          // Sets default layer to WORKMAN_P
+    KC_DVORAK_AU,                       // Sets default layer to WORKMAN_P
     VRSN,                               // Prints QMK Firmware and board info
     // KC_MAKE,                         // Run keyboard's customized make command
     // KC_RGB_T,                        // Toggles RGB Layer Indication mode
@@ -88,7 +90,8 @@ enum userspace_custom_keycodes {
 #define QWERTY  KC_QWERTY
 #define WORKMAN_P  KC_WORKMAN_P
 #define WORKMAN KC_WORKMAN
-
+#define DVORAK  KC_DVORAK
+#define DVORAK_AU  KC_DVORAK_AU
 
 #define LOWER   MO(_LOWER)
 #define RAISE   MO(_RAISE)
